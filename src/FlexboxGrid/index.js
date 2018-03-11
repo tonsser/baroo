@@ -262,4 +262,4 @@ ${props.hiddenLg && hidden}
 export const Div = styled.div`
 ${flexboxgrid}
 `;
-export default flexboxgrid;
+export default Div;
