@@ -43,7 +43,7 @@ export default class extends Component {
             {showLogo && <Logo alt="logo" src={logo} />}
           </Div>
           <Div colXs row middleXs endXs>
-            {showLink && <Link><a href={link.url}>{link.title}</a></Link>}
+            {showLink && <Link><a href={link.url} target="_blank">{link.title}</a></Link>}
             {showLink && <Separator />}
             {showCta && <Div ><Button href={cta.url}>{cta.title}</Button></Div>}
           </Div>
