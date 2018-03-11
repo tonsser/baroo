@@ -84,6 +84,11 @@ const lastCol = `
   -ms-flex-order: 1;
   order: 1;
 `;
+
+const hidden = `
+  display: none;
+`;
+
 const flexboxgrid = props => css`
 ${(props.container || props.containerFluid) && `
 margin-right: auto;
@@ -148,6 +153,7 @@ ${props.firstXs && firstCol}
 
 ${props.lastXs && lastCol}
 
+${props.hiddenXs && hidden}
 
 ${media.sm`
 
@@ -178,6 +184,9 @@ ${props.betweenSm && betweenCol}
 ${props.firstSm && firstCol}
 
 ${props.lastSm && lastCol}
+
+${props.hiddenSm && hidden}
+
 
 `}
 
@@ -211,6 +220,8 @@ ${props.firstMd && firstCol}
 
 ${props.lastMd && lastCol}
 
+${props.hiddenMd && hidden}
+
 `}
 
 ${media.lg`
@@ -242,6 +253,8 @@ ${props.betweenLg && betweenCol}
 ${props.firstLg && firstCol}
 
 ${props.lastLg && lastCol}
+
+${props.hiddenLg && hidden}
 
 `}
 
