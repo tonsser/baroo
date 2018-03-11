@@ -1,5 +1,5 @@
 export const type = {
-  base: 'Roboto-Regular',
+  base: 'Roboto',
   bold: 'Roboto-Bold',
   emphasis: 'Roboto-Italic',
 };
@@ -20,7 +20,7 @@ export const size = {
 
 export const style = {
   h1: {
-    'font-family': type.base,
+    'font-weight': 'bold',
     'font-size': size.h1,
   },
   h2: {

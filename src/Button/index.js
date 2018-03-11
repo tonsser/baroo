@@ -23,17 +23,22 @@ const Button = styled.a`
     outline: 0;
     white-space: nowrap;
     border-radius: 999em;
-    transition: 1000ms background-color, 100ms border-color, 100ms color;
+    transition: 100ms background-color, 100ms border-color, 100ms color;
   ${media.sm`
     padding-left: 40px;
     padding-right: 40px;
     font-size: ${size.medium};
   `}
+  &:hover,
+  &:focus {
+    color: ${color.white}
+    background-color: ${color.darkGrey}
+  }
 `;
 
 
 export default class extends Component {
   render() {
-    return <Button>{this.props.children}</Button>;
+    return <Button href={this.props.href}>{this.props.children}</Button>;
   }
 }
