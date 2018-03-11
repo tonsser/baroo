@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { Div } from '../FlexboxGrid';
-import Images from '../Themes/Images';
 import Button from '../Button';
 
 const Header = Div.extend`
@@ -41,7 +40,7 @@ export default class extends Component {
       <Div container>
         <Div row betweenXs middleXs>
           <Div colXs>
-            {showLogo && <Logo alt="logo"src={Images.logoWhite} />}
+            {showLogo && <Logo alt="logo" src={logo} />}
           </Div>
           <Div colXs row middleXs endXs>
             {showLink && <Link><a href={link.url}>{link.title}</a></Link>}
