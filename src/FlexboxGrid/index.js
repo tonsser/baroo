@@ -13,9 +13,9 @@ padding-left: 0.5rem;
 const colSize = (size) => {
   if (Number.isInteger(size) && size >= 1 && size <= 12) {
     return `
-    -ms-flex-preferred-size: ${100 * size / 12}%;
-    flex-basis: ${100 * size / 12}%;
-    max-width: ${100 * size / 12}%;
+    -ms-flex-preferred-size: ${(100 * size) / 12}%;
+    flex-basis: ${(100 * size) / 12}%;
+    max-width: ${(100 * size) / 12}%;
     `;
   }
   return `-webkit-box-flex: 1;
@@ -26,8 +26,9 @@ const colSize = (size) => {
   max-width: 100%;`;
 };
 
-const colOffset = size => Number.isInteger(size) && size >= 1 && size <= 12 && `
-margin-left: ${100 * size / 12}%;
+
+const colOffset = (size) => Number.isInteger(size) && size >= 1 && size <= 12 && `
+margin-left: ${(100 * size) / 12}%;
 `;
 
 const startCol = `
@@ -89,7 +90,7 @@ const hidden = `
   display: none;
 `;
 
-const flexboxgrid = props => css`
+const flexboxgrid = (props) => css`
 ${(props.container || props.containerFluid) && `
 margin-right: auto;
 margin-left: auto;

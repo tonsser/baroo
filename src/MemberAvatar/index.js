@@ -40,7 +40,8 @@ const MemberTitle = styled.p`
   margin: 0;
 `;
 
-export default props => (
+
+export default (props) => (
   <MemberAvatar>
     <MemberPicture>
       <img src={props.image} alt={props.name} />

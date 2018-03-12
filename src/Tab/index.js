@@ -11,7 +11,7 @@ const Tab = Div.extend`
   ${media.sm`
     margin-right: 30px;
   `}
-  ${props => props.active && css`
+  ${(props) => props.active && css`
     a {
       border-bottom: solid 6px ${color.green}
     }
@@ -27,7 +27,7 @@ const Link = styled.a`
   display: block;
 `;
 
-export default props => (
+export default (props) => (
   <Tab {...props}>
     <Link {...props}>{props.children}</Link>
   </Tab>

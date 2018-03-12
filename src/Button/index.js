@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import media from '../Themes/Media';
 import { size } from '../Themes/Fonts';
 import color from '../Themes/Colors';
@@ -37,8 +37,4 @@ const Button = styled.a`
 `;
 
 
-export default class extends Component {
-  render() {
-    return <Button href={this.props.href}>{this.props.children}</Button>;
-  }
-}
+export default () => <Button href={this.props.href}>{this.props.children}</Button>;

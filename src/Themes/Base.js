@@ -33,6 +33,5 @@ export default () => injectGlobal`
   a:active,
   a:visited {
     text-decoration: none;
-    color: inherit;
   }
 `;
