@@ -7,6 +7,8 @@ import styles from '@sambego/storybook-styles';
 
 import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer } from '../src';
 
+const TonsserLogo = 'https://tonsser.com/assets/logotype_white-494b8e75250e112c7fba586805880980af5751415c2a353420a51f3c8daf368d.png';
+
 Themes.Base();
 
 storiesOf('Button', module)
@@ -31,7 +33,9 @@ storiesOf('Button', module)
 
 storiesOf('Header', module)
   .add('black', () => (
-    <Header type="black"
+    <Header
+      logo={TonsserLogo}
+      type="black"
       cta={{
         url: '/',
         title: 'Get app',
@@ -45,14 +49,16 @@ storiesOf('Header', module)
 storiesOf('Header', module)
   .addDecorator(styles({ background: '#000' }))
   .add('transparent', () => (
-    <Header cta={{
-      url: '/',
-      title: 'Get app',
-    }}
+    <Header
+      logo={TonsserLogo}
+      cta={{
+        url: '/',
+        title: 'Get app',
+      }}
       link={{
-      url: '/',
-      title: 'Request coach access',
-    }}
+        url: '/',
+        title: 'Request coach access',
+      }}
     />
   ));
 
@@ -151,4 +157,4 @@ const footerCat = [
 ];
 
 storiesOf('Footer', module)
-  .add('normal', () => <Footer categories={footerCat} />);
+  .add('normal', () => <Footer logoUrl={TonsserLogo} categories={footerCat} />);
