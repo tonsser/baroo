@@ -10,33 +10,36 @@ const Footer = Div.extend`
   padding-top: 60px;
   padding-bottom: 30px;
   color: #b2b2b2;
-`;
-const CategoryTitle = styled.h4`
-  text-transform: uppercase;
-  margin: 0 0 0.5em;
-  font-size: 16px;
-  line-height: 26px;
-  font-weight: 300;
-`;
-const CategoryList = styled.ul`
-  margin: 0 0 2em;
-  padding: 0;
-  min-height: 100px;
-`;
-const CategoryItem = styled.li`
-  margin: 0;
-  list-style: none;
+
+  h4 {
+     text-transform: uppercase;
+     margin: 0 0 0.5em;
+     font-size: 16px;
+     line-height: 26px;
+     font-weight: 300;
+   }
+
+   ul {
+     margin: 0 0 2em;
+     padding: 0;
+     min-height: 100px;
+
+     li {
+       margin: 0;
+       list-style: none;
+
+       a {
+         color: white;
+         transition: color .1s;
+         &:hover {
+           color: ${Colors.green}
+         }
+       }
+     }
+   }
 `;
 
-const CategoryLink = styled.a`
-  color: white;
-  transition: color .1s;
-  &:hover {
-    color: ${Colors.green}
-  }
-`;
-
-const Logo = CategoryItem.extend`
+const Logo = styled.li`
   text-indent: -10000px;
   display: block;
   margin-bottom: 0.5em;
@@ -47,15 +50,15 @@ const Logo = CategoryItem.extend`
 `;
 const getCategory = (cat) => (
   <Fragment>
-    <CategoryTitle>{cat.title}</CategoryTitle>
-    <CategoryList>
+    <h4>{cat.title}</h4>
+    <ul>
       {cat.items.map((item) => (
-        <CategoryItem>
-          {item.link ? <CategoryLink href={item.link}>{item.text}</CategoryLink>
+        <li>
+          {item.link ? <a href={item.link}>{item.text}</a>
             : item.text}
-        </CategoryItem>
+        </li>
       ))}
-    </CategoryList>
+    </ul>
   </Fragment>
 );
 
@@ -66,9 +69,9 @@ export default (props) => {
       <Div container>
         <Div row>
           <Div colMd={3} lastXs colXs={6}>
-            <CategoryList>
+            <ul>
               <Logo url={logoUrl}>Tonsser</Logo>
-            </CategoryList>
+            </ul>
           </Div>
           <Div colMd={3} lastXs colXs={6} />
           {categories[0] &&
