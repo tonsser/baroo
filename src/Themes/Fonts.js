@@ -11,7 +11,7 @@ export const size = {
   h4: '26px',
   h5: '20px',
   h6: '19px',
-  input: '18px',
+  large: '18px',
   regular: '16px',
   medium: '14px',
   small: '12px',
