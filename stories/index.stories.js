@@ -10,7 +10,23 @@ import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer } from
 Themes.Base();
 
 storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
+  .add('with text', () => (
+    <div>
+      <Button btnLg onClick={action('clicked')}>Large Button</Button>
+      <br />
+      <br />
+      <Button onClick={action('clicked')}>Default Button</Button>
+      <br />
+      <br />
+      <Button btnSm onClick={action('clicked')}>Small Button</Button>
+      <br />
+      <br />
+      <Button btnXs onClick={action('clicked')}>Extra small Button</Button>
+      <br />
+      <br />
+      <Button btnOutline onClick={action('clicked')}>Outline Button</Button>
+    </div>
+  ))
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
 
 storiesOf('Header', module)

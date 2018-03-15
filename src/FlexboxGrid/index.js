@@ -2,23 +2,22 @@ import styled, { css } from 'styled-components';
 import media from '../Themes/Media';
 
 const colCommon = `
-box-sizing: border-box;
--webkit-box-flex: 0;
--ms-flex: 0 0 auto;
-flex: 0 0 auto;
-padding-right: 0.5rem;
-padding-left: 0.5rem;
+padding-left: 15px;
+padding-right: 15px;
+width: 100%;
+position: relative;
+min-height: 1px;
 `;
 
 const colSize = (size) => {
   if (Number.isInteger(size) && size >= 1 && size <= 12) {
     return `
-    -ms-flex-preferred-size: ${(100 * size) / 12}%;
-    flex-basis: ${(100 * size) / 12}%;
+    -ms-flex: 0 0 ${(100 * size) / 12}%;
+    flex: 0 0 ${(100 * size) / 12}%;
     max-width: ${(100 * size) / 12}%;
     `;
   }
-  return `-webkit-box-flex: 1;
+  return `
   -ms-flex-positive: 1;
   flex-grow: 1;
   -ms-flex-preferred-size: 0;
@@ -94,29 +93,18 @@ const flexboxgrid = (props) => css`
 ${(props.container || props.containerFluid) && `
 margin-right: auto;
 margin-left: auto;
+width: 100%;
+padding-right: 15px;
+padding-left: 15px;
 `}
-${props.containerFluid && `
-padding-right: 2rem;
-padding-left: 2rem;
-`}
-
 
 ${props.row && `
-box-sizing: border-box;
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-flex: 0;
--ms-flex: 0 1 auto;
-flex: 0 1 auto;
--webkit-box-orient: horizontal;
--webkit-box-direction: normal;
--ms-flex-direction: row;
-flex-direction: row;
--ms-flex-wrap: wrap;
-flex-wrap: wrap;
-margin-right: -0.5rem;
-margin-left: -0.5rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 `}
 
 ${props.row && props.reverse && `
@@ -158,7 +146,7 @@ ${props.hiddenXs && hidden}
 
 ${media.sm`
 
-${props.container && 'width: 49rem;'}
+${props.container && 'max-width: 720px;'}
 
 ${(props.colSm || props.colSmOffset) && colCommon}
 
@@ -193,7 +181,7 @@ ${props.hiddenSm && hidden}
 
 ${media.md`
 
-${props.container && 'width: 65rem;'}
+${props.container && 'max-width: 960px;'}
 
 ${(props.colMd || props.colMdOffset) && colCommon}
 
@@ -227,7 +215,7 @@ ${props.hiddenMd && hidden}
 
 ${media.lg`
 
-${props.container && 'width: 76rem;'}
+${props.container && 'max-width: 1140px;'}
 
 ${(props.colLg || props.colLgOffset) && colCommon}
 

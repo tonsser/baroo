@@ -5,9 +5,21 @@ import { style } from './Fonts';
 export default () => injectGlobal`
   ${styledNormalize}
   @import url('https://fonts.googleapis.com/css?family=Roboto');
+  @-ms-viewport {
+  width: device-width;
+  }
+  html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  }
   body {
     padding: 0;
     ${style.normal}
+  }
+  *,
+  *::before,
+  *::after {
+  box-sizing: inherit;
   }
   h1: {
     ${style.h1}
@@ -33,5 +45,6 @@ export default () => injectGlobal`
   a:active,
   a:visited {
     text-decoration: none;
+    color: inherit;
   }
 `;

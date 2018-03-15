@@ -39,14 +39,17 @@ export default (props) => {
   return (
     <Header {...props}>
       <Div container>
-        <Div row betweenXs middleXs>
+        <Div row middleXs>
           <Div colXs={4}>
             {showLogo && <Logo alt="logo" src={logo} />}
           </Div>
-          <Div colXs={8} row middleXs endXs>
-            {showLink && <Link><a href={link.url} target="_blank">{link.title}</a></Link>}
-            {showLink && <Separator />}
-            {showCta && <Div ><Button href={cta.url}>{cta.title}</Button></Div>}
+          <Div colXs={8}>
+            <Div row middleXs endXs>
+              {showLink && <Link><a href={link.url} target="_blank">{link.title}</a></Link>}
+              {showLink && <Separator />}
+              {showCta && <Div ><Button href={cta.url}>{cta.title}</Button></Div>}
+            </Div>
+
           </Div>
         </Div>
       </Div>
