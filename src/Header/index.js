@@ -44,7 +44,7 @@ export default (props) => {
             {showLogo && <Logo alt="logo" src={logo} />}
           </Div>
           <Div colXs={8}>
-            <Div row middleXs endXs>
+            <Div row middleXs endXs noGutters>
               {showLink && <Link><a href={link.url} target="_blank">{link.title}</a></Link>}
               {showLink && <Separator />}
               {showCta && <Div ><Button href={cta.url}>{cta.title}</Button></Div>}
