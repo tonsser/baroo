@@ -117,6 +117,10 @@ flex-direction: row-reverse;
 ${props.row && props.noGutters && `
   margin-left: 0;
   margin-right: 0;
+  > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `}
 
 ${(props.colXs || props.colXsOffset) && colCommon}
