@@ -5,8 +5,9 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import styles from '@sambego/storybook-styles';
 
-import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer } from '../src';
+import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer, ProgressBar, FlexboxGrid, MissionCard } from '../src';
 
+const Div = FlexboxGrid;
 const TonsserLogo = 'https://tonsser.com/assets/logotype_white-494b8e75250e112c7fba586805880980af5751415c2a353420a51f3c8daf368d.png';
 
 Themes.Base();
@@ -79,6 +80,42 @@ storiesOf('MemberAvatar', module)
       />
     </div>));
 
+storiesOf('ProgressBar', module)
+  .add('normal', () => (
+    <Div container>
+      <Div row>
+        <Div colXs>
+          <ProgressBar progress={21}></ProgressBar>
+        </Div>
+      </Div>
+      <Div row>
+        <Div colXs>
+          <ProgressBar progress={81}></ProgressBar>
+        </Div>
+      </Div>
+      <Div row>
+        <Div colXs={6} colXsOffset={3}>
+          <ProgressBar progress={66} showDelimiter></ProgressBar>
+        </Div>
+      </Div>
+    </Div>
+  ));
+
+storiesOf('MissionCard', module)
+  .add('normal', () => (
+    <Div container>
+      <Div row aroundXs>
+        <Div colXs={6}>
+          <MissionCard title="Invite your teamates"
+            description="Who are you missing on your team?"
+            progress={28}
+            goals="5/11+ Teamates on Tonsser"
+            expandable
+          />
+        </Div>
+      </Div>
+    </Div>
+  ));
 
 const footerCat = [
   {
