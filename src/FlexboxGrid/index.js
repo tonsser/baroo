@@ -85,8 +85,40 @@ const lastCol = `
   order: 1;
 `;
 
-const hidden = `
-  display: none;
+const dNone = `
+  display: none !important;
+`;
+
+const dInline = `
+  display: inline !important;
+`;
+
+const dInlineBlock = `
+  display: inline-block !important;
+`;
+
+const dBlock = `
+  display: block !important;
+`;
+
+const dTable = `
+  display: table !important;
+`;
+
+const dTableRow = `
+  display: table-row !important;
+`;
+
+const dTableCell = `
+  display: table-cell !important;
+`;
+
+const dFlex = `
+  display: flex !important;
+`;
+
+const dInlineFlex = `
+  display: inline-flex !important;
 `;
 
 const flexboxgrid = (props) => css`
@@ -150,7 +182,15 @@ ${props.firstXs && firstCol}
 
 ${props.lastXs && lastCol}
 
-${props.hiddenXs && hidden}
+${(props.dNone || props.dNoneXs) && dNone}
+${(props.dBlock || props.dBlockXs) && dBlock}
+${(props.dInlineBlock || props.dInlineBlockXs) && dInlineBlock}
+${(props.dInline || props.dInlineXs) && dInline}
+${(props.dTable || props.dTableXs) && dTable}
+${(props.dTableRow || props.dTableRowXs) && dTableRow}
+${(props.dTableCell || props.dTableCellXs) && dTableCell}
+${(props.dFlex || props.dFlexXs) && dFlex}
+${(props.dInlineFlex || props.dInlineFlexXs) && dInlineFlex}
 
 ${media.sm`
 
@@ -182,7 +222,15 @@ ${props.firstSm && firstCol}
 
 ${props.lastSm && lastCol}
 
-${props.hiddenSm && hidden}
+${props.dNoneSm && dNone}
+${props.dBlockSm && dBlock}
+${props.dInlineBlockSm && dInlineBlock}
+${props.dInlineSm && dInline}
+${props.dTableSm && dTable}
+${props.dTableRowSm && dTableRow}
+${props.dTableCellSm && dTableCell}
+${props.dFlexSm && dFlex}
+${props.dInlineFlexSm && dInlineFlex}
 
 
 `}
@@ -217,7 +265,15 @@ ${props.firstMd && firstCol}
 
 ${props.lastMd && lastCol}
 
-${props.hiddenMd && hidden}
+${props.dNoneMd && dNone}
+${props.dBlockMd && dBlock}
+${props.dInlineBlockMd && dInlineBlock}
+${props.dInlineMd && dInline}
+${props.dTableMd && dTable}
+${props.dTableRowMd && dTableRow}
+${props.dTableCellMd && dTableCell}
+${props.dFlexMd && dFlex}
+${props.dInlineFlexMd && dInlineFlex}
 
 `}
 
@@ -251,7 +307,15 @@ ${props.firstLg && firstCol}
 
 ${props.lastLg && lastCol}
 
-${props.hiddenLg && hidden}
+${props.dNoneLg && dNone}
+${props.dBlockLg && dBlock}
+${props.dInlineBlockLg && dInlineBlock}
+${props.dInlineLg && dInline}
+${props.dTableLg && dTable}
+${props.dTableRowLg && dTableRow}
+${props.dTableCellLg && dTableCell}
+${props.dFlexLg && dFlex}
+${props.dInlineFlexLg && dInlineFlex}
 
 `}
 
