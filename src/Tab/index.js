@@ -25,6 +25,7 @@ const Link = styled.a`
   padding: 8px 30px;
   font-size: 16px;
   display: block;
+  color: white;
 `;
 
 export default (props) => (
