@@ -25,7 +25,9 @@
     "styled-normalize": "^4.0.0"
   },
   "peerDependencies": {
-    "react": "16.x"
+    "chart.js": "^1.1.1",
+    "react": "16.x",
+    "react-chartjs": "^1.2.0"
   },
   "devDependencies": {
     "@sambego/storybook-styles": "^1.0.0",
