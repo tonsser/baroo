@@ -27,7 +27,7 @@ const Footer = Div.extend`
      li {
        margin: 0;
        list-style: none;
-
+       line-height: 26px;
        a {
          color: white;
          transition: color .1s;
