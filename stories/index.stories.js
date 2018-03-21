@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import styles from '@sambego/storybook-styles';
 
-import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer, ProgressBar, FlexboxGrid, MissionCard, StatBadge } from '../src';
+import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer, ProgressBar, FlexboxGrid, MissionCard, StatBadge, Evolution } from '../src';
 
 const Div = FlexboxGrid;
 const TonsserLogo = 'https://tonsser.com/assets/logotype_white-494b8e75250e112c7fba586805880980af5751415c2a353420a51f3c8daf368d.png';
@@ -117,7 +117,26 @@ storiesOf('MissionCard', module)
     </Div>
   ));
 
-storiesOf('StatBadge', module)
+storiesOf('Evolution', module)
+  .add('normal', () => (
+    <Div container>
+      <Div row aroundXs>
+        <Div colXs={12}>
+          <Evolution value={0.33333334} />
+        </Div>
+        <Div colXs={12}>
+          <Evolution value={15} />
+        </Div>
+        <Div colXs={12}>
+          <Evolution value={-8} />
+        </Div>
+        <Div colXs={12}>
+          <Evolution value={0} />
+        </Div>
+      </Div>
+    </Div>
+  ));
+storiesOf('StatBadge WIP', module)
   .add('normal', () => (
     <Div container>
       <Div row aroundXs>

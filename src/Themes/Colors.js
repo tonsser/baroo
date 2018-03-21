@@ -15,6 +15,10 @@ const colors = {
   black: '#000000',
   white: '#FFFFFF',
 
+  blueBadge: '#0D87F6',
+  greenBadge: '#52E694',
+  redBadge: '#EE4E4A',
+
   snow: 'white',
   ember: 'rgba(164, 0, 48, 0.5)',
   fire: '#e73536',
