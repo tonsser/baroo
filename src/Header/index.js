@@ -18,11 +18,11 @@ const Header = Div.extend`
 const Logo = styled.img`
   height: 34px;
 `;
-const Link = Div.extend`
+const Link = Div.withComponent('a').extend`
   letter-spacing: 0.3px;
   border-bottom: 1px solid white;
   padding-bottom: 2px;
-  color: white
+  color: white;
 `;
 
 
@@ -45,8 +45,8 @@ export default (props) => {
           </Div>
           <Div colXs={8}>
             <Div row middleXs endXs noGutters>
-              {showLink && <Link><a href={link.url} target="_blank">{link.title}</a></Link>}
-              {showLink && <Separator />}
+              {showLink && <Link dNoneXs dBlockSm href={link.url} target="_blank">{link.title}</Link>}
+              {showLink && <Separator dNoneXs dBlockSm />}
               {showCta && <Div ><Button href={cta.url}>{cta.title}</Button></Div>}
             </Div>
 
