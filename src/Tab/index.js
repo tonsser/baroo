@@ -22,7 +22,10 @@ const Link = styled.a`
   line-height: 3em;
   border: none;
   border-bottom: 6px solid transparent;
-  padding: 8px 30px;
+  padding: 8px 18px;
+  ${media.sm`
+      padding: 8px 30px;
+  `}
   font-size: 16px;
   display: block;
   color: white;
