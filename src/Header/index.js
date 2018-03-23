@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { Div } from '../FlexboxGrid';
 import Button from '../Button';
+import media from '../Themes/Media';
 
 const Header = Div.extend`
   position: absolute;
@@ -16,7 +17,10 @@ const Header = Div.extend`
 }
 `;
 const Logo = styled.img`
-  height: 34px;
+  height: 24px;
+  ${media.sm`
+    height: 34px;
+  `}
 `;
 const Link = Div.withComponent('a').extend`
   letter-spacing: 0.3px;
