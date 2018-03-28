@@ -28,6 +28,9 @@ storiesOf('Button', module)
       <br />
       <br />
       <Button btnOutline onClick={action('clicked')}>Outline Button</Button>
+      <br />
+      <br />
+      <Button btnReverse onClick={action('clicked')}>Reverse Button</Button>
     </div>
   ))
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);

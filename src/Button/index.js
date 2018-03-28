@@ -28,13 +28,23 @@ const ButtonOutline = css`
     color: black;
     background-color: ${color.green}
   }
+`;
 
+const ButtonReverse = css`
+  color:  ${color.green};
+  background-color: black;
+  &:hover,
+  &:focus {
+    color: #9c9a9b
+    background-color: #007f64
+  }
 `;
 const Button = styled.a`
   padding: 10px 20px;
   font-size: ${size.medium};
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
   font-weight: 900;
+  user-select: none;
   text-transform: uppercase;
   background-color: ${color.green};
   color: ${color.black};
@@ -55,10 +65,14 @@ const Button = styled.a`
     color: ${color.white}
     background-color: ${color.darkGrey}
   }
+  ${(props) => props.disabled && css`
+    opacity: 0.5;
+  `}
   ${(props) => props.btnLg && ButtonLarge}
   ${(props) => props.btnSm && ButtonSmall}
   ${(props) => props.btnXs && ButtonExtraSmall}
   ${(props) => props.btnOutline && ButtonOutline}
+  ${(props) => props.btnReverse && ButtonReverse}
 `;
 
 
