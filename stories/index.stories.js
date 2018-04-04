@@ -5,7 +5,9 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import styles from '@sambego/storybook-styles';
 
-import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer, ProgressBar, FlexboxGrid, MissionCard, StatBadge, Evolution, List } from '../src';
+import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer, ProgressBar, FlexboxGrid, MissionCard, StatBadge, Evolution, List, Table } from '../src';
+
+import mockData from './mockData';
 
 const Div = FlexboxGrid;
 const TonsserLogo = 'https://tonsser.com/assets/logotype_white-494b8e75250e112c7fba586805880980af5751415c2a353420a51f3c8daf368d.png';
@@ -159,6 +161,46 @@ storiesOf('List', module)
       </List.Item>
     </Div>
   ));
+
+storiesOf('Table', module)
+  .add('normal', () => (
+    <Div container>
+      <Table data={mockData.players}
+        columns={[
+          {
+            Header: 'Nom',
+            accessor: 'name',
+          },
+          {
+            Header: 'Club',
+            accessor: 'club',
+          },
+          {
+            Header: 'Catégorie',
+            accessor: 'category',
+          },
+          {
+            Header: 'Division',
+            accessor: 'division',
+          },
+          {
+            Header: 'Buts',
+            accessor: 'goals',
+          },
+          {
+            Header: 'Passes',
+            id: 'goalsPerMatch',
+            accessor: 'passes',
+          },
+          {
+            Header: 'Note',
+            accessor: 'note',
+          },
+        ]}
+      />
+    </Div>
+  ));
+
 storiesOf('StatBadge WIP', module)
   .add('normal', () => (
     <Div container>
