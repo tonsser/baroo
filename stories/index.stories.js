@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import styles from '@sambego/storybook-styles';
 
-import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer, ProgressBar, FlexboxGrid, MissionCard, StatBadge, Evolution } from '../src';
+import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer, ProgressBar, FlexboxGrid, MissionCard, StatBadge, Evolution, List } from '../src';
 
 const Div = FlexboxGrid;
 const TonsserLogo = 'https://tonsser.com/assets/logotype_white-494b8e75250e112c7fba586805880980af5751415c2a353420a51f3c8daf368d.png';
@@ -137,6 +137,26 @@ storiesOf('Evolution', module)
           <Evolution value={0} />
         </Div>
       </Div>
+    </Div>
+  ));
+
+storiesOf('List', module)
+  .add('normal', () => (
+    <Div container>
+      <List.Item>
+        <List.Avatar>
+          <img src="https://tonsser.com/assets/members/baroo_the_viking-7d0ee13e624d6ec099926882fe0a1d2fbdeea9537d5e2e6aaa800d1ae6570126.jpg" />
+        </List.Avatar>
+        <List.Content>
+          <List.Header>
+              Baroo The Viking
+          </List.Header>
+          <List.Description>
+              Office Dog
+          </List.Description>
+        </List.Content>
+        <Button btnXs btnReverse>Select</Button>
+      </List.Item>
     </Div>
   ));
 storiesOf('StatBadge WIP', module)

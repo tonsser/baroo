@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "styled-components": "^3.2.1",
-    "styled-normalize": "^4.0.0"
+    "styled-normalize": "^4.0.0",
+    "react-chartjs": "^1.2.0",
+    "chart.js": "^1.1.1"
   },
   "peerDependencies": {
     "chart.js": "^1.1.1",
