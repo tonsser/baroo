@@ -189,12 +189,15 @@ storiesOf('Table', module)
           },
           {
             Header: 'Passes',
-            id: 'goalsPerMatch',
             accessor: 'passes',
           },
           {
             Header: 'Note',
             accessor: 'note',
+          },
+          {
+            Header: 'Edit',
+            accessor: () => (<Button btnXs>Editer</Button>),
           },
         ]}
       />
