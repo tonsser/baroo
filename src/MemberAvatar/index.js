@@ -46,10 +46,10 @@ const MemberTitle = styled.p`
 const MemberAvatarComponent = ({ onClick, image, name, title, ...etc }) => (
   <MemberAvatar onClick={onClick} {...etc}>
     <MemberPicture>
-      {image.length !== 0 && <img src={image} alt={name} />}
+      {image && image.length !== 0 && <img src={image} alt={name} />}
     </MemberPicture>
-    {name.length !== 0 && <MemberName>{name}</MemberName>}
-    {title.length !== 0 && <MemberTitle>{title}</MemberTitle>}
+    {name && name.length !== 0 && <MemberName>{name}</MemberName>}
+    {title && title.length !== 0 && <MemberTitle>{title}</MemberTitle>}
   </MemberAvatar>
 );
 
