@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import styles from '@sambego/storybook-styles';
 
-import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer, ProgressBar, FlexboxGrid, MissionCard, StatBadge, Evolution, List, Table } from '../src';
+import { Button, Header, Themes, PictureHeader, Tab, MemberAvatar, Footer, ProgressBar, FlexboxGrid, MissionCard, StatBadge, Evolution, List, Table, Lineup } from '../src';
 
 import mockData from './mockData';
 
@@ -213,6 +213,11 @@ storiesOf('StatBadge WIP', module)
         </Div>
       </Div>
     </Div>
+  ));
+
+storiesOf('Lineup', module)
+  .add('normal', () => (
+    <Lineup />
   ));
 
 const footerCat = [
