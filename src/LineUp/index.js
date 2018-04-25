@@ -86,10 +86,10 @@ const generateLineup = (players = [], formation = FORMATION['3-4-3']) => {
   };
 };
 
-const Lineup = ({ players, formation, onPlayerClick }) => {
+const Lineup = ({ players, formation, onPlayerClick, className }) => {
   const { attackers, midfielders, defenders, goalkeeper, subsitutes } = generateLineup(players, FORMATION[formation]);
   return (
-    <div className="baroo lineup">
+    <div className={`baroo lineup ${className}`}>
       <div className="baroo field">
         <Div row aroundXs noGutters className="baroo attackers">
           {attackers.map((player) => getPlayer(player, onPlayerClick))}
@@ -104,7 +104,7 @@ const Lineup = ({ players, formation, onPlayerClick }) => {
           {goalkeeper.map((player) => getPlayer(player, onPlayerClick))}
         </Div>
       </div>
-      <Div row noGutters startXs noGutters className="baroo subsitutes">
+      <Div row noGutters startXs className="baroo subsitutes">
         {subsitutes.map((player) => getPlayer(player, onPlayerClick))}
       </Div>
     </div>
@@ -115,12 +115,14 @@ Lineup.propTypes = {
   players: PropTypes.array,
   formation: PropTypes.string,
   onPlayerClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 Lineup.defaultProps = {
   players: [],
   formation: '4-4-2',
   onPlayerClick: () => {},
+  className: '',
 };
 
 export default Lineup;
