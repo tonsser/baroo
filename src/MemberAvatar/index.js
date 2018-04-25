@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const MemberAvatar = styled.div`
   text-align: center;
   min-height: 345px;
+  cursor: pointer;
 `;
 const MemberPicture = styled.div`
   width: 60%;
@@ -41,8 +43,8 @@ const MemberTitle = styled.p`
 `;
 
 
-export default (props) => (
-  <MemberAvatar>
+const MemberAvatarComponent = (props) => (
+  <MemberAvatar onClick={props.onClick}>
     <MemberPicture>
       <img src={props.image} alt={props.name} />
     </MemberPicture>
@@ -50,3 +52,17 @@ export default (props) => (
     <MemberTitle>{props.title}</MemberTitle>
   </MemberAvatar>
 );
+
+MemberAvatarComponent.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  onClick: PropTypes.func,
+};
+
+MemberAvatarComponent.defaultProps = {
+  title: '',
+  onClick: () => {},
+};
+
+export default MemberAvatarComponent;
