@@ -216,8 +216,11 @@ storiesOf('StatBadge WIP', module)
   ));
 
 storiesOf('Lineup', module)
-  .add('normal', () => (
-    <Lineup />
+  .add('4-4-2', () => (
+    <Lineup players={mockData.TonsserPlayers} />
+  ))
+  .add('3-4-3', () => (
+    <Lineup players={mockData.TonsserPlayers} formation="3-4-3" />
   ));
 
 const footerCat = [

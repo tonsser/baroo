@@ -37,6 +37,7 @@ const MemberAvatarStyled = styled(MemberAvatar)`
     border-color: #717171;
     border-width: 2px;
     border-style: solid;
+    margin-bottom: 0;
   }
 `;
 const getPlayer = (player = {}, onClick) => (
@@ -44,10 +45,9 @@ const getPlayer = (player = {}, onClick) => (
 );
 
 const generateLineup = (players = [], formation = FORMATION['3-4-3']) => {
-  const lineup = _.clone(formation);
-  const playersSorted = _.orderBy(players, (p) => (p.stats ? p.stats.match_count || 0 : -1));
+  const lineup = _.cloneDeep(formation);
+  const playersSorted = _.orderBy(players, (p) => (p.stats ? p.stats.match_count || 0 : -1)).reverse();
   const subsitutes = [];
-
   // for each player
   // we iterare the FORMATION
   // and for each position
@@ -59,11 +59,11 @@ const generateLineup = (players = [], formation = FORMATION['3-4-3']) => {
     if (player.primary_position) {
       let bestIndex = 999;
       let bestPosition = null;
-      const { primary_position } = player;
+      const { primary_pos_id } = player;
       lineup.forEach((line, lineIndex) => {
         line.forEach((position, positionIndex) => {
-          if (_.isArray(position) && position.includes(primary_position) && position.indexOf(primary_position) < bestIndex) {
-            bestIndex = position.indexOf(primary_position);
+          if (_.isArray(position) && position.includes(primary_pos_id) && position.indexOf(primary_pos_id) < bestIndex) {
+            bestIndex = position.indexOf(primary_pos_id);
             bestPosition = [lineIndex, positionIndex];
           }
         });
@@ -91,20 +91,20 @@ const Lineup = ({ players, formation, onPlayerClick }) => {
   return (
     <div className="baroo lineup">
       <div className="baroo field">
-        <Div row aroundXs className="baroo attackers">
+        <Div row aroundXs noGutters className="baroo attackers">
           {attackers.map((player) => getPlayer(player, onPlayerClick))}
         </Div>
-        <Div row aroundXs className="baroo midfielders">
+        <Div row aroundXs noGutters className="baroo midfielders">
           {midfielders.map((player) => getPlayer(player, onPlayerClick))}
         </Div>
-        <Div row aroundXs className="baroo defenders">
+        <Div row aroundXs noGutters className="baroo defenders">
           {defenders.map((player) => getPlayer(player, onPlayerClick))}
         </Div>
-        <Div row aroundXs className="baroo goalkeeper">
+        <Div row aroundXs noGutters className="baroo goalkeeper">
           {goalkeeper.map((player) => getPlayer(player, onPlayerClick))}
         </Div>
       </div>
-      <Div row noGutters startXs className="baroo subsitutes">
+      <Div row noGutters startXs noGutters className="baroo subsitutes">
         {subsitutes.map((player) => getPlayer(player, onPlayerClick))}
       </Div>
     </div>
