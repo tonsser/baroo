@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const MemberAvatar = styled.div`
   text-align: center;
@@ -43,24 +43,26 @@ const MemberTitle = styled.p`
 `;
 
 
-const MemberAvatarComponent = (props) => (
-  <MemberAvatar onClick={props.onClick}>
+const MemberAvatarComponent = ({ onClick, image, name, title, ...etc }) => (
+  <MemberAvatar onClick={onClick} {...etc}>
     <MemberPicture>
-      <img src={props.image} alt={props.name} />
+      {image.length !== 0 && <img src={image} alt={name} />}
     </MemberPicture>
-    <MemberName>{props.name}</MemberName>
-    <MemberTitle>{props.title}</MemberTitle>
+    {name.length !== 0 && <MemberName>{name}</MemberName>}
+    {title.length !== 0 && <MemberTitle>{title}</MemberTitle>}
   </MemberAvatar>
 );
 
 MemberAvatarComponent.propTypes = {
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  name: PropTypes.string,
   title: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 MemberAvatarComponent.defaultProps = {
+  image: '',
+  name: '',
   title: '',
   onClick: () => {},
 };
