@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import styled from 'styled-components';
 import MemberAvatar from '../MemberAvatar';
 import { Div } from '../FlexboxGrid';
 
@@ -28,20 +27,8 @@ const FORMATION = {
   '3-4-3': [[POSITIONS.LW, POSITIONS.ST, POSITIONS.RW], [POSITIONS.LM, POSITIONS.CM, POSITIONS.CM, POSITIONS.RM], [POSITIONS.LB, POSITIONS.CB, POSITIONS.RB], [POSITIONS.GK]],
 };
 
-const MemberAvatarStyled = styled(MemberAvatar)`
-  min-height: unset;
-  > div {
-    width: 80px;
-    height: 80px;
-    background: #202020;
-    border-color: #717171;
-    border-width: 2px;
-    border-style: solid;
-    margin-bottom: 0;
-  }
-`;
 const getPlayer = (player = {}, onClick) => (
-  <MemberAvatarStyled className="baroo player" image={player.profile_picture} name={player.lastname} onClick={onClick} />
+  <MemberAvatar className="baroo player" image={player.profile_picture} name={player.lastname} onClick={onClick} />
 );
 
 const generateLineup = (players = [], formation = FORMATION['3-4-3']) => {

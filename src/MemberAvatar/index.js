@@ -1,23 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import media from '../Themes/Media';
 
 const MemberAvatar = styled.div`
   text-align: center;
-  min-height: 345px;
   cursor: pointer;
 `;
 const MemberPicture = styled.div`
-  width: 60%;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  mask-image: radial-gradient(circle, #fff, #000);
   display: inline-block;
-  margin: 2em 0 1.5em;
+  margin-top: 1em;
   overflow: hidden;
   z-index: 1;
   position: relative;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  background: #202020;
+  border-color: #717171;
+  border-width: 2px;
+  border-style: solid;
   img {
     width: 100%;
     transition: transform 0.2s;
@@ -27,19 +31,33 @@ const MemberPicture = styled.div`
   &:hover img {
     transform: scale(1.2);
   }
+  ${media.sm`
+    width: 80px;
+    height: 80px;
+    margin-top: 2em;
+  `}
 `;
 
 const MemberName = styled.h2`
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 30px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
   margin: 0;
+  ${media.sm`
+    font-size: 16px;
+    line-height: 18px;
+  `}
 `;
 
 const MemberTitle = styled.p`
   font-weight: 300;
-  color: rgba(255,255,255,0.6);
+  opacity: 0.6;
   margin: 0;
+  font-size: 12px;
+  ${media.sm`
+    font-size: 14px;
+  `}
 `;
 
 
