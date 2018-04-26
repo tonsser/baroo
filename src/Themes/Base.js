@@ -1,6 +1,6 @@
 import styledNormalize from 'styled-normalize';
 import { injectGlobal } from 'styled-components';
-import { style } from './Fonts';
+import { style, type } from './Fonts';
 
 export default () => injectGlobal`
   ${styledNormalize}
@@ -21,23 +21,13 @@ export default () => injectGlobal`
   *::after {
   box-sizing: inherit;
   }
-  h1: {
-    ${style.h1}
-  }
-  h2: {
-    ${style.h2}
-  }
-  h3: {
-    ${style.h3}
-  }
-  h4: {
-    ${style.h4}
-  }
-  h5: {
-    ${style.h5}
-  }
-  h6: {
-    ${style.h6}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${type.base}
   }
   a,
   a:hover,
