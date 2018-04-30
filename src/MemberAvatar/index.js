@@ -44,9 +44,16 @@ const MemberName = styled.h2`
   line-height: 16px;
   text-transform: uppercase;
   margin: 0;
+  > img {
+    width: 20px;
+    vertical-align: bottom;
+  }
   ${media.sm`
     font-size: 16px;
     line-height: 18px;
+    > img {
+      width: 25px;
+    }
   `}
 `;
 
@@ -61,12 +68,14 @@ const MemberTitle = styled.p`
 `;
 
 
-const MemberAvatarComponent = ({ onClick, image, name, title, ...etc }) => (
+const MemberAvatarComponent = ({ onClick, image, name, title, teamLogo, ...etc }) => (
   <MemberAvatar onClick={onClick} {...etc}>
     <MemberPicture>
       {image && image.length !== 0 && <img src={image} alt={name} />}
     </MemberPicture>
-    {name && name.length !== 0 && <MemberName>{name}</MemberName>}
+    {name && name.length !== 0 &&
+      <MemberName>{teamLogo && teamLogo.length !== 0 && <img src={teamLogo} />}{name}</MemberName>
+    }
     {title && title.length !== 0 && <MemberTitle>{title}</MemberTitle>}
   </MemberAvatar>
 );
@@ -75,13 +84,15 @@ MemberAvatarComponent.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string,
   title: PropTypes.string,
+  teamLogo: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 MemberAvatarComponent.defaultProps = {
-  image: '',
-  name: '',
-  title: '',
+  image: null,
+  name: null,
+  title: null,
+  teamLogo: null,
   onClick: () => {},
 };
 

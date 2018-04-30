@@ -82,6 +82,7 @@ storiesOf('MemberAvatar', module)
         image="https://tonsser.com/assets/members/baroo_the_viking-7d0ee13e624d6ec099926882fe0a1d2fbdeea9537d5e2e6aaa800d1ae6570126.jpg"
         name="Baroo The Viking"
         title="Office dog"
+        teamLogo="http://www.lfp.fr/images/photos/clubs/logo/grand/logo_nice_100.png"
       />
     </div>));
 

@@ -28,7 +28,7 @@ const FORMATION = {
 };
 
 const getPlayer = (player = {}, onClick) => (
-  <MemberAvatar className="baroo player" image={player.profile_picture} name={player.lastname} onClick={() => onClick(player)} />
+  <MemberAvatar className="baroo player" image={player.profile_picture} name={player.lastname} teamLogo={player.teamLogo} onClick={() => onClick(player)} />
 );
 
 const generateLineup = (players = [], formation = FORMATION['3-4-3']) => {
