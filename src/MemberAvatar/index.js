@@ -47,6 +47,7 @@ const MemberName = styled.h2`
   > img {
     width: 20px;
     vertical-align: bottom;
+    margin-right: 3px;
   }
   ${media.sm`
     font-size: 16px;
