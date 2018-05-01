@@ -10,6 +10,7 @@ display: flex;
 align-items: stretch;
 justify-content: space-between;
 padding: 20px 15px;
+width: 100%;
 `
 
 const TableStyled = styled.table`
