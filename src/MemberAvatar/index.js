@@ -24,6 +24,8 @@ const MemberPicture = styled.div`
   border-style: solid;
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.2s;
     z-index: 0;
     position: relative;
