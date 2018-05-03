@@ -218,7 +218,7 @@ storiesOf('StatBadge WIP', module)
 
 storiesOf('Lineup', module)
   .add('4-4-2', () => (
-    <Lineup players={mockData.TonsserPlayers} />
+    <Lineup players={mockData.TonsserPlayers} subsitutesTitle="Subsitutes" />
   ))
   .add('3-4-3', () => (
     <Lineup players={mockData.TonsserPlayers} formation="3-4-3" />
