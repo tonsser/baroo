@@ -4,7 +4,6 @@ import { style, type } from './Fonts';
 
 export default () => injectGlobal`
   ${styledNormalize}
-  @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,900');
   @-ms-viewport {
   width: device-width;
   }
