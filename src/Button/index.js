@@ -39,6 +39,19 @@ const ButtonReverse = css`
     background-color: #007f64
   }
 `;
+
+const ButtonOutlineReverse = css`
+  background-color: transparent;
+  color: black;
+  border-color: black;
+  box-shadow: none;
+  &:hover,
+  &:focus {
+    background-color: black;
+    border-color: black;
+    color: ${color.green};
+  }
+`
 const Button = styled.a`
   padding: 10px 20px;
   font-size: ${size.medium};
@@ -72,6 +85,7 @@ const Button = styled.a`
   ${(props) => props.btnSm && ButtonSmall}
   ${(props) => props.btnXs && ButtonExtraSmall}
   ${(props) => props.btnOutline && ButtonOutline}
+  ${(props) => props.btnOutlineReverse && ButtonOutlineReverse}
   ${(props) => props.btnReverse && ButtonReverse}
 `;
 

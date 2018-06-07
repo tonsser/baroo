@@ -32,6 +32,9 @@ storiesOf('Button', module)
       <Button btnOutline onClick={action('clicked')}>Outline Button</Button>
       <br />
       <br />
+      <Button btnOutlineReverse onClick={action('clicked')}>OutlineReverse Button</Button>
+      <br />
+      <br />
       <Button btnReverse onClick={action('clicked')}>Reverse Button</Button>
     </div>
   ))
