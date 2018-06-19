@@ -22,7 +22,6 @@ const ButtonOutline = css`
   background-color: transparent;
   color: ${color.green};
   border-color: ${color.green};
-  box-shadow: none;
   &:hover,
   &:focus {
     color: black;
@@ -44,7 +43,6 @@ const ButtonOutlineReverse = css`
   background-color: transparent;
   color: black;
   border-color: black;
-  box-shadow: none;
   &:hover,
   &:focus {
     background-color: black;
@@ -55,7 +53,6 @@ const ButtonOutlineReverse = css`
 const Button = styled.a`
   padding: 10px 20px;
   font-size: ${size.medium};
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
   font-weight: 900;
   user-select: none;
   text-transform: uppercase;
