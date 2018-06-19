@@ -24,8 +24,7 @@ const ButtonOutline = css`
   border-color: ${color.green};
   &:hover,
   &:focus {
-    color: black;
-    background-color: ${color.green}
+    opacity: 0.6;
   }
 `;
 
@@ -34,8 +33,7 @@ const ButtonReverse = css`
   background-color: black;
   &:hover,
   &:focus {
-    color: #9c9a9b
-    background-color: #007f64
+    opacity: 0.6;
   }
 `;
 
@@ -45,9 +43,7 @@ const ButtonOutlineReverse = css`
   border-color: black;
   &:hover,
   &:focus {
-    background-color: black;
-    border-color: black;
-    color: ${color.green};
+    opacity: 0.6;
   }
 `
 const Button = styled.a`
@@ -72,8 +68,7 @@ const Button = styled.a`
     transition: 100ms background-color, 100ms border-color, 100ms color;
   &:hover,
   &:focus {
-    color: ${color.white}
-    background-color: ${color.darkGrey}
+    opacity: 0.6;
   }
   ${(props) => props.disabled && css`
     opacity: 0.5;
