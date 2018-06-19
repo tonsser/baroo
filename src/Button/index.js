@@ -25,6 +25,7 @@ const ButtonOutline = css`
   &:hover,
   &:focus {
     opacity: 0.6;
+    color: inherit;
   }
 `;
 
@@ -34,6 +35,7 @@ const ButtonReverse = css`
   &:hover,
   &:focus {
     opacity: 0.6;
+    color: inherit;
   }
 `;
 
@@ -44,6 +46,7 @@ const ButtonOutlineReverse = css`
   &:hover,
   &:focus {
     opacity: 0.6;
+    color: inherit;
   }
 `
 const Button = styled.a`
@@ -69,6 +72,7 @@ const Button = styled.a`
   &:hover,
   &:focus {
     opacity: 0.6;
+    color: inherit;
   }
   ${(props) => props.disabled && css`
     opacity: 0.5;
