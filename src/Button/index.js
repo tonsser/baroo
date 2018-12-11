@@ -25,7 +25,7 @@ const ButtonOutline = css`
   &:hover,
   &:focus {
     opacity: 0.6;
-    color: inherit;
+    color: ${color.green};
   }
 `;
 
@@ -72,7 +72,7 @@ const Button = styled.a`
   &:hover,
   &:focus {
     opacity: 0.6;
-    color: inherit;
+    color: ${color.black};
   }
   ${(props) => props.disabled && css`
     opacity: 0.5;
