@@ -35,7 +35,7 @@ const ButtonReverse = css`
   &:hover,
   &:focus {
     opacity: 0.6;
-    color: inherit;
+    color: ${color.green};
   }
 `;
 
@@ -46,9 +46,9 @@ const ButtonOutlineReverse = css`
   &:hover,
   &:focus {
     opacity: 0.6;
-    color: inherit;
+    color: black;
   }
-`
+`;
 const Button = styled.a`
   padding: 10px 20px;
   font-size: ${size.medium};
